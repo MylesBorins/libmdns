@@ -22,23 +22,10 @@ static void register_reply_callback(DNSServiceRef sdRef,
     
 };
 
-///< Callback for browse
-static void browse_callback(DNSServiceRef sdRef, 
-                            DNSServiceFlags flags, 
-                            uint32_t interfaceIndex, 
-                            DNSServiceErrorType errorCode, 
-                            const char *serviceName, 
-                            const char *regtype, 
-                            const char *replyDomain, 
-                            void *context)
-{
-    cerr << serviceName << endl;
-};
-
 int main( int argv, char * argc[] )
 {
     
-    DNSServiceRef register_svc, browse_svc;
+    DNSServiceRef register_svc;
     DNSServiceErrorType err;
     
     char txt[255];
@@ -74,7 +61,12 @@ int main( int argv, char * argc[] )
 
     int input;
     
-    cout << "Give me some input to quit brah" << endl;
+    cout << "                                       " << endl;
+    cout << "=======================================" << endl;
+    cout << "||| Give me some input to quit brav |||" << endl;
+    cout << "=======================================" << endl;
+    cout << "                                       " << endl;
+    cout << "[mdns]:";
     cin >> input;
 
     return 0;
