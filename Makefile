@@ -20,10 +20,12 @@ LIBS=-framework CoreAudio -framework CoreMIDI -framework CoreFoundation \
 	-framework AppKit -lstdc++ -lm 
 endif
 
-OBJS= mdns.o hello.o
+ALLOBJS= mdns.o hello.o
 
-hello: $(OBJS)
-	$(CXX) -o hello $(OBJS) $(LIBS) $(INCLUDE)
+all: hello
+
+hello: $(ALLOBJS)
+	$(CXX) -o hello $(ALLOBJS) $(LIBS) $(INCLUDE)
 
 hello.o: hello.cpp
 	$(CXX) $(FLAGS) $(INCLUDES) hello.cpp
