@@ -6,10 +6,10 @@ A Special thanks to Ge Wong, and William Light
 
 ##About
 
-A serious of c++ classes to simplify working with multicast-dns
+Some function and classes to simplify working with multicast-dns
 
 On linux you will need to install "avahi-compat-libdns_sd-devel" to allow the
-code to be compatible with avahi
+code to be "theoretically" compatible with avahi.. it don't work though
 
 ## Getting Started
 
