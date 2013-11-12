@@ -22,9 +22,11 @@ endif
 
 HELLOBJS= mdns.o hello.o
 
-SERVOBJS= mdns.o hello.o
+SERVOBJS= mdns.o server.o
 
-all: hello server
+CLIENTOBJS = mdns.o client.o
+
+all: hello server client
 
 hello: $(HELLOBJS)
 	$(CXX) -o hello $(HELLOBJS) $(LIBS) $(INCLUDE)
@@ -32,12 +34,17 @@ hello: $(HELLOBJS)
 server: $(SERVOBJS)
 	$(CXX) -o server $(SERVOBJS) $(LIBS) $(INCLUDE)
 
+client: $(CLIENTOBJS)
+	$(CXX) -o client $(CLIENTOBJS) $(LIBS) $(INCLUDE)
+
 hello.o: hello.cpp
 	$(CXX) $(FLAGS) $(INCLUDES) hello.cpp
 
 server.o: server.cpp
 	$(CXX) $(FLAGS) $(INCLUDES) server.cpp
 
+client.o: client.cpp
+	$(CXX) $(FLAGS) $(INCLUDES) client.cpp
 
 mdns.o: mdns.h mdns.cpp
 	$(CXX) $(FLAGS) $(INCLUDES) $(INCLUDEDIR)mdns.cpp
@@ -68,3 +75,5 @@ mdns.o: mdns.h mdns.cpp
 
 clean:
 	rm -f *~ *# *.o hello
+	rm -f *~ *# *.o server
+	rm -f *~ *# *.o client
