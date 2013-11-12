@@ -113,7 +113,7 @@ private:
      * For some lame reason, the dns service doesn't define a strerror
      * analog
      */
-    static const char* dns_service_strerror(DNSServiceErrorType err);
+    // static const char* dns_service_strerror(DNSServiceErrorType err);
 
     /**
      * Remove the given DNSServiceRef from the vector.
@@ -121,6 +121,7 @@ private:
     void remove_svc(DNSServiceRef sdRef);
 };
 
+const char* dns_service_strerror(DNSServiceErrorType err);
 
 void sayHelloWorld( );
 
